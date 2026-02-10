@@ -1,0 +1,26 @@
+#photo {
+  width: 200px;
+}
+
+#links {
+  margin: 20px 0px 20px 55px;
+}
+
+.socials {
+  width: 35px;
+}
+
+#gh {
+  margin-right: 15px;
+}
+
+#editor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
+}
+
+#vs-code {
+  width: 30px;
+}
