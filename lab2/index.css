@@ -12,3 +12,7 @@ h1 {
 h2 {
   color: blue;
 }
+
+.questions {
+  font-weight: bold;
+}
