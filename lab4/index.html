@@ -2,9 +2,115 @@
 <html>
   <head>
     <title>JS Fundamentals</title>
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <h1>Fundamentos de JavaScript</h1>
+    <div>
+      <h2>Preguntas</h2>
+      <div>
+        <p class="questions">
+          ¿Qué diferencias y semejanzas hay entre Java y JavaScript?
+        </p>
+        <div>
+          <h3>Diferencias</h3>
+          <ul>
+            <li>Java es un lenguaje orientado a objetos puros</li>
+            <li>Java es lenguaje compilado y JavaScript interpretado</li>
+            <li>Java es un tipado débil y JavaScript un tipado débil</li>
+            <li>
+              Java se ejecuta en una máquina virtual y JavaScript en el
+              navegador
+            </li>
+            <li>
+              Java es un lenguaje estático y JavaScript es un lenguaje dinámico
+            </li>
+          </ul>
+          <h3>Semejanzas</h3>
+          <ul>
+            <li>Los dos son lenguajes orientados a objetos</li>
+            <li>El manejo de excepciones es similar</li>
+            <li>Su sintaxis es un poco similar</li>
+          </ul>
+        </div>
+        <p class="questions">
+          ¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)
+        </p>
+        <div>
+          <ul>
+            <li>
+              <span>Date.getDay():</span> Devuelve el día de la semana (0-6).
+              Domingo = 0.
+            </li>
+            <li>
+              <span>Date.getDate():</span> Devuelve el día del mes (1-31).
+            </li>
+            <li><span>Date.getHours():</span> Devuelve la hora (0-23).</li>
+            <li>
+              <span>Date.getMonth():</span> Devuelve el mes. Empieza en 0. Enero
+              = 0, Febrero = 1, etc.
+            </li>
+            <li>
+              <span>Date.getFullYear():</span> Devuelve el año en formato de 4
+              dígitos.
+            </li>
+          </ul>
+        </div>
+        <p class="questions">
+          ¿Qué métodos tienen los arreglos? (Menciona al menos 5*)
+        </p>
+        <div>
+          <ul>
+            <li>
+              <span>push(element): </span> Agrega un elemento al final del
+              arreglo. Modifica el arreglo original.
+            </li>
+            <li>
+              <span>pop():</span> Elimina el último elemento y lo devuelve.
+            </li>
+            <li><span>shift():</span> Elimina el primer elemento.</li>
+            <li><span>unshift():</span> Agrega un elemento al inicio.</li>
+            <li>
+              <span>filter(callback):</span> Devuelve un nuevo arreglo con los
+              elementos que cumplen una condición.
+            </li>
+          </ul>
+        </div>
+        <p class="questions">
+          ¿Cómo se declara una variable con alcance local dentro de una función?
+        </p>
+        <p>
+          En JS, una variable tiene alcance local cuando solo existe dentro de
+          la función donde fue declarada. Si se declara fuera una función se
+          considera como global.
+        </p>
+        <p class="questions">
+          ¿Qué implicaciones tiene utilizar variables globales dentro de
+          funciones?
+        </p>
+        <p>
+          Que esas variables serán usadas por varias funciones o otras partes
+          del código.
+        </p>
+      </div>
+      <div>
+        <h2>Referencias bibliográficas</h2>
+        <div>
+          <p>
+            “Array”. (s.f.). mdn.
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array
+          </p>
+          <p>
+            “Date”. (s.f.). mdn.
+            https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
+          </p>
+          <p>
+            “Diferencias entre Java y JavaScript”. (2022). Universidad Europea.
+            https://universidadeuropea.com/blog/diferencias-entre-java-y-javascript/
+          </p>
+        </div>
+      </div>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
