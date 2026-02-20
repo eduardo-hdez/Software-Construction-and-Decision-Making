@@ -1,3 +1,19 @@
 #inputs {
   display: flex;
+  flex-direction: column;
+  width: 200px;
+  gap: 10px;
+}
+
+#first-filter {
+  padding: 5px 15px;
+}
+
+#second-filter {
+  padding: 5px 15px;
+}
+
+#button-confirm {
+  margin-top: 16px;
+  padding: 8px 10px;
 }
