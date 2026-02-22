@@ -1,3 +1,31 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f0f2f5;
+  font-family: sans-serif;
+}
+
+#page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 32px 40px;
+  margin-top: 60px;
+}
+
+#page h1 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
 #inputs {
   display: flex;
   flex-direction: column;
@@ -7,13 +35,48 @@
 
 #first-filter {
   padding: 5px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
 }
 
 #second-filter {
   padding: 5px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#first-filter:focus,
+#second-filter:focus {
+  border-color: #4a90e2;
 }
 
 #button-confirm {
   margin-top: 16px;
   padding: 8px 10px;
+  align-items: center;
+  width: 100%;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#button-confirm:hover {
+  background-color: #357abd;
+}
+
+#output {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 0.9rem;
+  color: #555;
 }
