@@ -33,6 +33,42 @@ body {
   gap: 10px;
 }
 
+.tooltip-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background-color: #333;
+  color: #fff;
+  font-size: 0.78rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  width: 200px;
+  z-index: 10;
+  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 14px;
+  border-width: 0 5px 5px 5px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+}
+
+.tooltip-wrapper:hover .tooltip {
+  display: block;
+}
+
 #first-filter {
   padding: 5px 15px;
   border: 1px solid #ccc;
