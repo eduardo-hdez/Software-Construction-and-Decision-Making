@@ -1,0 +1,23 @@
+{
+  "name": "tc2005b",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node --watch app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardo-hdez/Software-Construction-and-Decision-Making.git"
+  },
+  "author": "Eduardo Hernández Alonso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eduardo-hdez/Software-Construction-and-Decision-Making/issues"
+  },
+  "homepage": "https://github.com/eduardo-hdez/Software-Construction-and-Decision-Making#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
