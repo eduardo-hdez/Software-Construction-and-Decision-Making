@@ -14,5 +14,6 @@ exports.getNewTask = (request, response, next) => {
 exports.postNewTask = (request, response, next) => {
   const task = new Tasks(request.body.title, request.body.description);
   task.save();
+  response.setHeader("Set-Cookie", `lastTask=${task.title} Secure`);
   response.redirect("/tasks");
 };

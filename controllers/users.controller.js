@@ -14,5 +14,6 @@ exports.getNewUser = (request, response, next) => {
 exports.postNewUser = (request, response, next) => {
   const user = new Users(request.body.name, request.body.description);
   user.save();
+  response.setHeader("Set-Cookie", `lastUser=${user.name} Secure`);
   response.redirect("/users");
 };
