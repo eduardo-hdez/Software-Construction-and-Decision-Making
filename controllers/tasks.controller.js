@@ -4,11 +4,19 @@ const path = require("path");
 
 exports.getTasks = (request, response, next) => {
   const tasks = Tasks.fetchAll();
-  response.render("tasks/index", { tasks: tasks, title: "Tasks" });
+  response.render("tasks/index", {
+    tasks: tasks,
+    title: "Tasks",
+    username: request.session.username || "",
+  });
 };
 
 exports.getNewTask = (request, response, next) => {
-  response.render("tasks/new", { title: "New Task" });
+  response.render("tasks/new", {
+    title: "New Task",
+    username: request.session.username || "",
+  });
+
 };
 
 exports.postNewTask = (request, response, next) => {
