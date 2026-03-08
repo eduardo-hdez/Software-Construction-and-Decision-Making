@@ -1,5 +1,5 @@
 exports.getLogin = (request, response, next) => {
-  response.render("Login/index", { title: "Login" })
+  response.render("login", { title: "Login" })
 };
 
 exports.postLogin = (request, response, next) => {
