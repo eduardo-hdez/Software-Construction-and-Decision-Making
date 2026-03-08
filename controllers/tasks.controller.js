@@ -3,8 +3,9 @@ const Tasks = require("../models/tasks.model");
 const path = require("path");
 
 exports.getTasks = (request, response, next) => {
-  Tasks.fetchAll().then(([rows, fieldData]) => {
-    response.render("tasks/index", {
+  console.log(request.params.id);
+  Tasks.fetch(request.params.id).then(([rows, fieldData]) => {
+    return response.render("tasks/index", {
       title: "Tasks",
       username: request.session.username || "",
       tasks: rows,

@@ -11,4 +11,16 @@ module.exports = class Tasks {
   static fetchAll() {
     return db.execute('SELECT * FROM tasks');
   }
+
+  static fetchOne(id) {
+    return db.execute('SELECT * FROM tasks WHERE id = ?', [id]);
+  }
+
+  static fetch(id) {
+    if (id) {
+      return this.fetchOne(id);
+    } else {
+      return this.fetchAll();
+    }
+  }
 };
