@@ -1,26 +1,32 @@
 <%- include('../includes/header') %>
 
-<h2>Edit Task</h2>
+<h2 class="title is-4">Edit Task</h2>
 
-<form action="/tasks/<%= task.id %>/edit" method="POST">
-  <fieldset>
-    <legend>Task Details</legend>
+<div class="box">
+  <form action="/tasks/<%= task.id %>/edit" method="POST">
+    <div class="field">
+      <label class="label" for="title">Name</label>
+      <div class="control">
+        <input class="input" type="text" id="title" name="title" value="<%= task.name %>" required />
+      </div>
+    </div>
 
-    <p>
-      <label for="title"><strong>Name:</strong></label><br />
-      <input type="text" id="title" name="title" size="40" value="<%= task.name %>" required />
-    </p>
+    <div class="field">
+      <label class="label" for="description">Description</label>
+      <div class="control">
+        <textarea class="textarea" id="description" name="description" rows="4" required><%= task.description %></textarea>
+      </div>
+    </div>
 
-    <p>
-      <label for="description"><strong>Description:</strong></label><br />
-      <textarea id="description" name="description" rows="4" cols="40" required><%= task.description %></textarea>
-    </p>
-
-    <p>
-      <button type="submit">Update Task</button>
-      <a href="/tasks">Cancel</a>
-    </p>
-  </fieldset>
-</form>
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-success" type="submit">Update Task</button>
+      </div>
+      <div class="control">
+        <a class="button is-light" href="/tasks">Cancel</a>
+      </div>
+    </div>
+  </form>
+</div>
 
 <%- include('../includes/footer') %>

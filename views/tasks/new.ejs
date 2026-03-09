@@ -1,26 +1,32 @@
 <%- include('../includes/header') %>
 
-<h2>Create New Task</h2>
+<h2 class="title is-4">Create New Task</h2>
 
-<form action="/tasks/new" method="POST">
-  <fieldset>
-    <legend>Task Details</legend>
+<div class="box">
+  <form action="/tasks/new" method="POST">
+    <div class="field">
+      <label class="label" for="title">Title</label>
+      <div class="control">
+        <input class="input" type="text" id="title" name="title" placeholder="Enter task title" required />
+      </div>
+    </div>
 
-    <p>
-      <label for="title"><strong>Title:</strong></label><br />
-      <input type="text" id="title" name="title" size="40" placeholder="Enter task title" required />
-    </p>
+    <div class="field">
+      <label class="label" for="description">Description</label>
+      <div class="control">
+        <textarea class="textarea" id="description" name="description" rows="4" placeholder="Enter task description" required></textarea>
+      </div>
+    </div>
 
-    <p>
-      <label for="description"><strong>Description:</strong></label><br />
-      <textarea id="description" name="description" rows="4" cols="40" placeholder="Enter task description" required></textarea>
-    </p>
-
-    <p>
-      <button type="submit">Save Task</button>
-      <a href="/tasks">Cancel</a>
-    </p>
-  </fieldset>
-</form>
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-success" type="submit">Save Task</button>
+      </div>
+      <div class="control">
+        <a class="button is-light" href="/tasks">Cancel</a>
+      </div>
+    </div>
+  </form>
+</div>
 
 <%- include('../includes/footer') %>
