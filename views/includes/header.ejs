@@ -6,17 +6,35 @@
     <title>TC2005B - Laboratorios</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     <link rel="icon" href="../../public/favicon.ico" />
+    <style>
+      body { display: flex; flex-direction: column; min-height: 100vh; }
+      .section { flex: 1; }
+    </style>
   </head>
   <body>
-    <header>
-      <h1><%= title %></h1>
-      <% if (typeof username !== 'undefined' && username) { %>
-        <p><em>Welcome, <%= username %></em></p>
-      <% } %>
-      <nav>
-        <a href="/tasks">All Tasks</a> |
-        <a href="/tasks/new">New Task</a>
-      </nav>
-      <hr />
-    </header>
-    <main>
+    <nav class="navbar is-link" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold" href="/tasks"><%= title %></a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNav">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="mainNav" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/tasks">All Tasks</a>
+          <a class="navbar-item" href="/tasks/new">New Task</a>
+        </div>
+        <% if (typeof username !== 'undefined' && username) { %>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <span class="tag is-info is-light">Welcome, <%= username %></span>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="container">
