@@ -17,12 +17,9 @@ app.use(session({
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get("/", (request, response) => {
-  if (request.session.username) {
-    return response.redirect("/tasks");
-  }
-  response.redirect("/users/login");
-});
+const csrf = require('csurf');
+const csrfProtection = csrf();
+app.use(csrfProtection);
 
 const routeUsers = require("./routes/users.routes.js");
 app.use("/users", routeUsers);
