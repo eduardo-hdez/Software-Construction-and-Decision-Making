@@ -3,12 +3,12 @@
 <h2 class="title is-4">Edit Task</h2>
 
 <div class="box">
-  <form action="/tasks/<%= task.id %>/edit-task" method="POST">
+  <form action="/tasks/<%= task.id_task %>/edit-task" method="POST">
     <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
     <div class="field">
       <label class="label" for="title">Name</label>
       <div class="control">
-        <input class="input" type="text" id="title" name="title" value="<%= task.name %>" required />
+        <input class="input" type="text" id="title" name="title" value="<%= task.title %>" required />
       </div>
     </div>
 

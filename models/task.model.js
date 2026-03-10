@@ -15,7 +15,7 @@ module.exports = class Task {
   }
 
   static fetchOne(id) {
-    return db.from('Tasks').select('*').eq('id', id_task);
+    return db.from('Tasks').select('*').eq('id_task', id);
   }
 
   static fetch(id) {
@@ -26,7 +26,7 @@ module.exports = class Task {
     }
   }
 
-  static update(id_task, title, description) {
-    return db.from('Tasks').update({ title: title, description: description }).eq('id', id_task);
+  static update(id, title, description) {
+    return db.from('Tasks').update({ title: title, description: description }).eq('id_task', id);
   }
 };

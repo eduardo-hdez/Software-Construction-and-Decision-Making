@@ -3,8 +3,8 @@ const Task = require("../models/task.model");
 const path = require("path");
 
 exports.getAllTasks = (request, response, next) => {
-  console.log(request.params.id_task);
-  Task.fetch(request.params.id_task).then(({ data, error }) => {
+  console.log(request.params.id);
+  Task.fetch(request.params.id).then(({ data, error }) => {
     if (error) throw error;
     return response.render("tasks/index", {
       title: "Tasks",
@@ -39,7 +39,7 @@ exports.postNewTask = (request, response, next) => {
 };
 
 exports.getEditTask = (request, response, next) => {
-  Task.fetchOne(request.params.id_task).then(({ data, error }) => {
+  Task.fetchOne(request.params.id).then(({ data, error }) => {
     if (error) throw error;
     if (data.length === 0) {
       return response.redirect("/tasks");
@@ -58,7 +58,7 @@ exports.getEditTask = (request, response, next) => {
 };
 
 exports.postEditTask = (request, response, next) => {
-  Task.update(request.params.id_task, request.body.title, request.body.description).then(() => {
+  Task.update(request.params.id, request.body.title, request.body.description).then(() => {
     return response.redirect("/tasks");
   }).catch(error => {
     console.log(error);
