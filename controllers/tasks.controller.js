@@ -4,11 +4,12 @@ const path = require("path");
 
 exports.getTasks = (request, response, next) => {
   console.log(request.params.id);
-  Task.fetch(request.params.id).then(([rows, fieldData]) => {
+  Task.fetch(request.params.id).then(({ data, error }) => {
+    if (error) throw error;
     return response.render("tasks/index", {
       title: "Tasks",
       username: request.session.username || "",
-      tasks: rows,
+      tasks: data,
     });
   }).catch(error => {
     console.log(error);
@@ -35,14 +36,15 @@ exports.postNewTask = (request, response, next) => {
 };
 
 exports.getEditTask = (request, response, next) => {
-  Task.fetchOne(request.params.id).then(([rows, fieldData]) => {
-    if (rows.length === 0) {
+  Task.fetchOne(request.params.id).then(({ data, error }) => {
+    if (error) throw error;
+    if (data.length === 0) {
       return response.redirect("/tasks");
     }
     response.render("tasks/edit", {
       title: "Edit Task",
       username: request.session.username || "",
-      task: rows[0],
+      task: data[0],
     });
   }).catch(error => {
     console.log(error);

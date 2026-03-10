@@ -1,4 +1,4 @@
-const db = require('../util/database');
+const db = require('../util/supabase');
 
 module.exports = class Task {
   constructor(name, description) {
@@ -6,14 +6,14 @@ module.exports = class Task {
     this.description = description;
   }
   save() {
-    return db.execute('INSERT INTO tasks (name, description) VALUES (?, ?)', [this.name, this.description]);
+    return db.from('Tasks').insert({ name: this.name, description: this.description });
   }
   static fetchAll() {
-    return db.execute('SELECT * FROM tasks');
+    return db.from('Tasks').select('*');
   }
 
   static fetchOne(id) {
-    return db.execute('SELECT * FROM tasks WHERE id = ?', [id]);
+    return db.from('Tasks').select('*').eq('id', id);
   }
 
   static fetch(id) {
@@ -25,6 +25,6 @@ module.exports = class Task {
   }
 
   static update(id, name, description) {
-    return db.execute('UPDATE tasks SET name = ?, description = ? WHERE id = ?', [name, description, id]);
+    return db.from('Tasks').update({ name: name, description: description }).eq('id', id);
   }
 };
