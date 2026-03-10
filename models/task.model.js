@@ -1,13 +1,14 @@
 const db = require('../util/supabase');
 
 module.exports = class Task {
-  constructor(title, description) {
+  constructor(title, description, username) {
     this.title = title;
     this.description = description;
+    this.username = username;
   }
   
   save() {
-    return db.from('Tasks').insert({ title: this.title, description: this.description });
+    return db.from('Tasks').insert({ title: this.title, description: this.description, username: this.username });
   }
 
   static fetchAll() {

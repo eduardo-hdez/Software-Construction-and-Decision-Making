@@ -29,7 +29,7 @@ exports.getNewTask = (request, response, next) => {
 };
 
 exports.postNewTask = (request, response, next) => {
-  const task = new Task(request.body.title, request.body.description);
+  const task = new Task(request.body.title, request.body.description, request.session.username);
   task.save().then(() => {
     return response.redirect("/tasks");
   }).catch(error => {
