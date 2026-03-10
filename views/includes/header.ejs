@@ -23,14 +23,26 @@
         </a>
       </div>
       <div id="mainNav" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="/tasks">All Tasks</a>
-          <a class="navbar-item" href="/tasks/new">New Task</a>
-        </div>
-        <% if (typeof username !== 'undefined' && username) { %>
+        <% if (typeof isLoggedIn !== 'undefined' && isLoggedIn) { %>
+          <div class="navbar-start">
+            <a class="navbar-item" href="/tasks">All Tasks</a>
+            <a class="navbar-item" href="/tasks/new">New Task</a>
+          </div>
           <div class="navbar-end">
             <div class="navbar-item">
               <span class="tag is-info is-light">Welcome, <%= username %></span>
+            </div>
+            <div class="navbar-item">
+              <a class="button is-light" href="/users/logout">Logout</a>
+            </div>
+          </div>
+        <% } else { %>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <a class="button is-light" href="/users/login">Login</a>
+            </div>
+            <div class="navbar-item">
+              <a class="button is-primary" href="/users/signup">Signup</a>
             </div>
           </div>
         <% } %>

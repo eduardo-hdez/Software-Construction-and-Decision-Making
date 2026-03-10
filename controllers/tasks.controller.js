@@ -9,6 +9,7 @@ exports.getAllTasks = (request, response, next) => {
     return response.render("tasks/index", {
       title: "Tasks",
       username: request.session.username || "",
+      isLoggedIn: request.session.isLoggedIn || false,
       tasks: data,
     });
   }).catch(error => {
@@ -21,6 +22,7 @@ exports.getNewTask = (request, response, next) => {
   response.render("tasks/new", {
     title: "New Task",
     username: request.session.username || "",
+    isLoggedIn: request.session.isLoggedIn || false,
   });
 
 };
@@ -44,6 +46,7 @@ exports.getEditTask = (request, response, next) => {
     response.render("tasks/edit", {
       title: "Edit Task",
       username: request.session.username || "",
+      isLoggedIn: request.session.isLoggedIn || false,
       task: data[0],
     });
   }).catch(error => {

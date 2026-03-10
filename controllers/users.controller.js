@@ -6,6 +6,7 @@ exports.getSignup = (request, response, next) => {
     title: 'Signup',
     csrfToken: request.csrfToken(),
     username: request.session.username || '',
+    isLoggedIn: request.session.isLoggedIn || false,
   });
 }
 
