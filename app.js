@@ -21,6 +21,11 @@ const csrf = require('csurf');
 const csrfProtection = csrf();
 app.use(csrfProtection);
 
+app.use((request, response, next) => {
+  response.locals.privilegios = request.session.privilegios || [];
+  next();
+});
+
 app.get("/", (request, response) => response.redirect("/users/login"));
 
 const routeUsers = require("./routes/users.routes.js");
