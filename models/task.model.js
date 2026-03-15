@@ -8,15 +8,19 @@ module.exports = class Task {
   }
   
   save() {
-    return db.from('Tasks').insert({ title: this.title, description: this.description, username: this.username });
+    return db.from('tasks').insert({ title: this.title, description: this.description, username: this.username });
   }
 
   static fetchAll() {
-    return db.from('Tasks').select('*');
+    return db.from('tasks').select('*');
+  }
+
+  static fetchByUser(username) {
+    return db.from('tasks').select('*').eq('username', username);
   }
 
   static fetchOne(id) {
-    return db.from('Tasks').select('*').eq('id_task', id);
+    return db.from('tasks').select('*').eq('id_task', id);
   }
 
   static fetch(id) {
@@ -28,6 +32,10 @@ module.exports = class Task {
   }
 
   static update(id, title, description) {
-    return db.from('Tasks').update({ title: title, description: description }).eq('id_task', id);
+    return db.from('tasks').update({ title: title, description: description }).eq('id_task', id);
+  }
+
+  static delete(id) {
+    return db.from('tasks').delete().eq('id_task', id);
   }
 };
