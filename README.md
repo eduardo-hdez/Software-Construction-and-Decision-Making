@@ -14,6 +14,12 @@ Stored procedures creados en proyecto:
 - [Modelo - Producto](https://github.com/eduardo-hdez/KAS-B2B-Preorder-Catalog-System/commit/94bef079db685ac23ee50882354b3f63f551f9b7)
 - [Modelo - Usuario](https://github.com/eduardo-hdez/KAS-B2B-Preorder-Catalog-System/commit/851bc3cdf923d25ce40eaf2bb0abd7a021127d71)
 
+## Lab 24
+
+AJAX
+
+- [Cambio de cuenta - Concesionaria](https://github.com/eduardo-hdez/Custora/commit/8552cf9d962b992209ac0ef7354eb811ba88e74b)
+
 ## Lab 27
 
 - [Servicio Web: Resend](https://github.com/eduardo-hdez/KAS-B2B-Preorder-Catalog-System/commit/e5a06cff5d8b78bee1c20d820c93d5cec6ec1817)
